@@ -78,11 +78,16 @@ def fibonacci_rabbits(n, k): #n = months and k = pairs of offspring
         baby,adult = adult,adult + (baby * k)
     print(baby)
     
+def gc_content(dna_list):
+    max_value = 0
+    for i in range (len(dna_list)):
+        nucleotides = dna_list[i] == ('G') + dna_list[j] == ('C')
+        gc_con = ((nucledotides/len(dna_list[i]))*100)
+        if max_value < nucleotides:
+            index = i
+            max_gc = gc_con
+    print(index, max_gc)
 
-
-
-    
-    
     
 """
 @author: Adesh Patel
