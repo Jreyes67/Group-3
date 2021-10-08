@@ -54,6 +54,36 @@ if reverse_compliment("AAAACCCGGT") == "ACCGGGTTTT":
     print('True')
 else:
     print('False')
+    
+    """
+    @author: Jose Reyes
+    """
+def mendels_law(hom, het, rec): #Given 
+    
+    ntotal = (hom + het + rec) 
+    
+    dominantHomo = (rec/ntotal) * ((rec - 1)/(ntotal - 1)) #rec = recessive
+    
+    heterozygous = (het/ntotal) * ((het - 1)/(ntotal - 1)) #het = heterozygous
+    
+    recessiveHomo = (hom/ntotal) * (hom/(ntotal - 1)) + (hom/ntotal) * (hom/(ntotal-1)) #hom = homozygous
+    
+    probabilityRecessive = dominantHomo + heterozygous * (1/4) + recessiveHomo * (1/2)
+    
+    print (1-probabilityRecessive)
+   
+def fibonacci_rabbits(n, k): #n = months and k = pairs of offspring
+    baby, adult = 1,1
+    for i in range(n - 1):
+        baby,adult = adult,adult + (baby * k)
+    print(baby)
+    
+
+
+
+    
+    
+    
 """
 @author: Adesh Patel
 """
