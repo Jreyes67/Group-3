@@ -161,3 +161,16 @@ def rna2codon(rna):
     
   return protein_string;
 
+def locate_substring(dna_snippet, dna):
+    x = []
+    for i in range(len(dna)):
+        if dna.startswith(dna_snippet, i):
+            x.append(i)
+    return x
+
+def hamming_dist(dna1, dna2):
+    x = 0
+    for i in range(len(dna1)):
+        if dna1[i] != dna2[i]:
+            x += 1
+    return x
