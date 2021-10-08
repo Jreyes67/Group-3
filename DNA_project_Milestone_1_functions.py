@@ -209,3 +209,88 @@ def hamming_dist(dna1, dna2):
         if dna1[i] != dna2[i]:
             x += 1
     return x
+"""
+@author: Zyaire Howard
+"""
+def count_dom_phenotype(genotypes):
+    prob = 0
+    for index in range(len(genotypes)):
+        if index == 0:
+            prob = genotypes[0] * 1
+        if index == 1:
+            prob += genotypes[1] * 2
+        if index == 2:
+            prob += genotypes[2] * 3
+        if index == 3:
+            prob += genotypes[3] * 4
+        if index == 4:
+            prob += genotypes[4] * 5
+        if index == 5:
+            prob += 0
+    return prob
+print(count_dom_phenotype([9,1,0,2,42,7]))
+
+rna2codon={
+'UUU': 'BRAKE', 'UUC': 'F', 'UUA': 'L', 'UUG': 'L', 'CUU': 'L', 'CUC': 'L', 'CUA': 'BRAKE', 'CUG': 'L',
+'AUU': 'I', 'AUC': 'I', 'AUA': 'I', 'AUG': 'BRAKE', 'GUU': 'V', 'GUC': 'V', 'GUA': 'V', 'GUG': 'BRAKE',
+'UCU': 'S', 'UCC': 'S', 'UCA': 'S', 'UCG': 'S', 'CCU': 'BRAKE', 'CCC': 'BRAKE', 'CCA': 'P', 'CCG': 'P',
+'ACU': 'T', 'ACC': 'T', 'ACA': 'T', 'ACG': 'T', 'GCU': 'A', 'GCC': 'A', 'GCA': 'BRAKE', 'GCG': 'BRAKE',
+'UAU': 'BRAKE', 'UAC': 'Y', 'UAA': 'BRAKE', 'UAG': 'H', 'CAU': 'H', 'CAC': 'H', 'CAA': 'Q', 'CAG': 'Q',
+'AAU': 'N', 'AAC': 'N', 'AAA': 'K', 'AAG': 'BRAKE', 'GAU': 'D', 'GAC': 'D', 'GAA': 'E', 'GAG': 'BRAKE',
+'UGU': 'C', 'UGC': 'C', 'UGA': 'BRAKE', 'UGG': 'W', 'CGU': 'BRAKE', 'CGC': 'R', 'CGA': 'R', 'CGG': 'R',
+'AGU': 'BRAKE', 'AGC': 'S', 'AGA': 'R', 'AGG': 'R', 'GGU': 'BRAKE', 'GGC': 'G', 'GGA': 'G', 'GGG': 'G',
+}
+
+def source_rna(protein):
+    count=0
+    for key in rna2codon.keys():
+
+        if rna2codon[key] in protein:
+            count+=1
+
+        elif rna2codon[key]=='BRAKE':
+            count+=len(protein)
+
+    return count%1000000
+
+print(source_rna("GU"))
+
+rna2codon = {
+'UUU': 'BRAKE', 'UUC': 'F', 'UUA': 'L', 'UUG': 'L', 'CUU': 'L', 'CUC': 'L', 'CUA': 'BRAKE', 'CUG': 'L',
+'AUU': 'I', 'AUC': 'I', 'AUA': 'I', 'AUG': 'BRAKE', 'GUU': 'V', 'GUC': 'V', 'GUA': 'V', 'GUG': 'BRAKE',
+'UCU': 'S', 'UCC': 'S', 'UCA': 'S', 'UCG': 'S', 'CCU': 'BRAKE', 'CCC': 'BRAKE', 'CCA': 'P', 'CCG': 'P',
+'ACU': 'T', 'ACC': 'T', 'ACA': 'T', 'ACG': 'T', 'GCU': 'A', 'GCC': 'A', 'GCA': 'BRAKE', 'GCG': 'BRAKE',
+'UAU': 'BRAKE', 'UAC': 'Y', 'UAA': 'BRAKE', 'UAG': 'H', 'CAU': 'H', 'CAC': 'H', 'CAA': 'Q', 'CAG': 'Q',
+'AAU': 'N', 'AAC': 'N', 'AAA': 'K', 'AAG': 'BRAKE', 'GAU': 'D', 'GAC': 'D', 'GAA': 'E', 'GAG': 'BRAKE',
+'UGU': 'C', 'UGC': 'C', 'UGA': 'BRAKE', 'UGG': 'W', 'CGU': 'BRAKE', 'CGC': 'R', 'CGA': 'R', 'CGG': 'R',
+'AGU': 'BRAKE', 'AGC': 'S', 'AGA': 'R', 'AGG': 'R', 'GGU': 'BRAKE', 'GGC': 'G', 'GGA': 'G', 'GGG': 'G',
+}
+
+def replaceCodons(rnasequence):
+    i = 0
+    protein = ""
+    rnasequence = rnasequence.replace("\n","")
+    
+    while (i < len(rnasequence)):
+        
+        if(rna2codon[rnasequence[i:i+3]]== 'BRAKE'):
+            break
+            
+        protein += rna2codon[rnasequence[i:i + 3]]
+        i += 3
+    protein = protein.replace('BRAKE','')
+    
+    return protein
+
+def rna_splyce(dna, intron_list):
+    intron_list.sort(reverse = True)
+    
+    for i in intron_list:
+        dna = dna.replace(i,"")
+        
+    rna = dna.replace("T","U")    
+    output=replaceCodons(rna)
+    
+    return output
+
+rna_splyce("GTATCCTAGTAGGTTATCGTATCG", ['TCAGTACATATG','GGATAGTGACACTAG'])
