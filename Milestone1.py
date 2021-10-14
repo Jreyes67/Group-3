@@ -76,7 +76,7 @@ def fibonacci_rabbits(n, k): #n = months and k = pairs of offspring
     adult, baby = 1,1
     for i in range(n - 1):
         baby,adult = adult,adult + (baby * k)
-    print(baby)
+    return baby
     
 def gc_content(dna_list):
     max_value = 0
