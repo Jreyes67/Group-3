@@ -37,20 +37,20 @@ if dna2rna("GATGGAACTTGACTACGTAAATT") == "GAUGGAACUUGACUACGUAAAUU":
 else:
     print('False')
     
-def reverse_compliment(dna):
-    compliment = ''
+def reverse_complement(dna):
+    complement = ''
     for character in dna:
         if character == 'T':
-            compliment = compliment + 'A'
+            complement = complement + 'A'
         elif character == 'A':
-            compliment = compliment + 'T'
+            complement = complement + 'T'
         elif character == 'G':
-            compliment = compliment + 'C'
+            complement = complement + 'C'
         elif character == 'C':
-            compliment = compliment + 'G'
-    return compliment[::-1]
-print (reverse_compliment("AAAACCCGGT"))
-if reverse_compliment("AAAACCCGGT") == "ACCGGGTTTT":
+            complement = complement + 'G'
+    return complement[::-1]
+print (reverse_complement("AAAACCCGGT"))
+if reverse_complement("AAAACCCGGT") == "ACCGGGTTTT":
     print('True')
 else:
     print('False')
