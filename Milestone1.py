@@ -82,10 +82,10 @@ def gc_content(dna_list):
     max_value = 0
     for i in range (len(dna_list)):
         nucleotides = dna_list[i] == ('G') + dna_list[j] == ('C')
-        gc_con = ((nucleotides/len(dna_list[i]))*100) #Percentage of Nucleotides
+        gc_content = ((nucleotides/len(dna_list[i]))*100) #Percentage of Nucleotides
         if max_value < nucleotides:
             index = i
-            max_gc = gc_con
+            max_gc = gc_content
     print(index, max_gc)
 
     
