@@ -64,8 +64,8 @@ def mendels_law(hom, het, rec): #Given
     heterozygous = (het/ntotal) * ((het - 1)/(ntotal - 1)) #het = heterozygous
     recessiveHomo = (rec/ntotal) * (het/(ntotal - 1)) + (het/ntotal) * (rec/(ntotal-1)) #homo = homozygous
     probabilityRecessive = dominantHomo + heterozygous * (1/4) + recessiveHomo * (1/2)
-    return (1-probabilityRecessive)
-    print (mendels_law(2,2,2))
+    return 1-probabilityRecessive
+    mendels_law(2,2,2)
    
 def fibonacci_rabbits(n, k): #n = months and k = pairs of offspring
     adult, baby = 1,1
