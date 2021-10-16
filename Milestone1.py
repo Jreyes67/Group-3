@@ -82,7 +82,7 @@ def gc_content(dna_list):
         if max_value < nucleotides:
             index = i
             max_gc = gc_content
-    print(index, max_gc)
+    return index, max_gc
 
     
 """
