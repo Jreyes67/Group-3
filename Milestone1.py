@@ -73,14 +73,17 @@ def fibonacci_rabbits(n, k): #n = months and k = pairs of offspring
     return baby
     
 def GC_content(dna_list):
+    nucleotides = ''
     max_value = 0
+    max_gc = 0
     for i in range (len(dna_list)):
-        nucleotides = dna_list[i] == ('G') + dna_list[j] == ('C')
+        nucleotides = dna_list[i].count('C') + dna_list[i].count('G')
         GC_content = ((nucleotides/len(dna_list[i]))*100) #Percentage of Nucleotides
         if max_value < nucleotides:
             index = i
             max_gc = GC_content
-    print(index, max_gc)
+    return index, max_gc
+
 
 
     
