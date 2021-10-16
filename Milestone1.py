@@ -59,17 +59,11 @@ else:
     @author: Jose Reyes
     """
 def mendels_law(hom, het, rec): #Given 
-    
     ntotal = (hom + het + rec) 
-    
     dominantHomo = (rec/ntotal) * ((rec - 1)/(ntotal - 1)) #rec = recessive
-    
     heterozygous = (het/ntotal) * ((het - 1)/(ntotal - 1)) #het = heterozygous
-    
     recessiveHomo = (rec/ntotal) * (het/(ntotal - 1)) + (het/ntotal) * (rec/(ntotal-1)) #homo = homozygous
-    
     probabilityRecessive = dominantHomo + heterozygous * (1/4) + recessiveHomo * (1/2)
-    
     print (1-probabilityRecessive)
    
 def fibonacci_rabbits(n, k): #n = months and k = pairs of offspring
@@ -79,9 +73,10 @@ def fibonacci_rabbits(n, k): #n = months and k = pairs of offspring
     return baby
     
 def gc_content(dna_list):
+    nucleotides = ''
     max_value = 0
     for i in range (len(dna_list)):
-        nucleotides = dna_list[i] == ('G') + dna_list[j] == ('C')
+        nucleotides = dna_list[i] == ('C') + dna_list[i] == ('G')
         gc_content = ((nucleotides/len(dna_list[i]))*100) #Percentage of Nucleotides
         if max_value < nucleotides:
             index = i
