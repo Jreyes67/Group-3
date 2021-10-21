@@ -58,3 +58,35 @@ if shared_motif(["ATATACA", "ATACAGA", "GGTATACA"]) == "ATACA":
 else:
     print('False')
     
+
+    
+"Written by Zyaire Howard"
+def assemble_genome(dna_list):
+    length = len(dna_list)
+    combine = [[0 for _ in range(length)] for _ in range(length)]
+    for a in range(length):
+        for b in range(length):
+            if a == b:
+                continue
+            c, d = dna_list[a], dna_list[b]
+            letters = len(c)
+            for z in range(1, letters):
+                if d.startswith(c[z:]):
+                    combine[a][b] = letters - z
+                    break
+
+    def transform(a, cover):
+        if cover == (1<<length) - 1:
+            return dna_list[a]
+        result = 'stop' * 320
+        for b in range(length):
+            if cover & (1<<b) == 0:
+                z = combine[a][b]
+                string = transform(b, cover | (1<<b))
+                if len(dna_list[a] + string[z:]) < len(result):
+                    result = dna_list[a] + string[z:]
+        return result
+    return min([transform(a, 1<<a) for a in range(length)], key=len)
+
+
+print(assemble_genome(["ATTAGACCTG", "CCTGCCGGAA", "AGACCTGCCG", "GCCGGAATAC"]))
