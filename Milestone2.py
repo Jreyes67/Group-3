@@ -90,3 +90,27 @@ def assemble_genome(dna_list):
 
 
 print(assemble_genome(["ATTAGACCTG", "CCTGCCGGAA", "AGACCTGCCG", "GCCGGAATAC"]))
+
+def reverse_complement(dna):
+    complement = ''
+    for character in dna:
+        if character == 'T':
+            complement = complement + 'A'
+        elif character == 'A':
+            complement = complement + 'T'
+        elif character == 'G':
+            complement = complement + 'C'
+        elif character == 'C':
+            complement = complement + 'G'
+    return complement[::-1]
+
+def rev_palindrome(dna):
+    result = []
+    for a in range(len(dna)-4):
+        for b in range(a+3,min(len(dna),a+12)):
+            string = dna[a:b+1]
+            if reverse_complement(dna[a:b+1]) == string:
+                result.append((a,b-a+1))
+
+    return result
+print(rev_palindrome("TCAATGCATGCGGGTCTATATGCAT"))
