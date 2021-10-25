@@ -114,3 +114,21 @@ def rev_palindrome(dna):
 
     return result
 print(rev_palindrome("TCAATGCATGCGGGTCTATATGCAT"))
+
+#Written by Adesh
+import math 
+def random_genome(dna, gc_content):
+    dna = dna.upper()
+    cg = len(dna.replace('A','').replace('T',''))
+    at = len(dna.replace('C','').replace('G',''))
+    result= []
+    for i in range (0, len(gc_content)):
+        prob = cg * math.log10(float(gc_content[i])/ 2) + at * math.log10((1- float(gc_content[i]))/ 2)
+        result.append(round(prob, 3))
+    return result
+dna="ACGATACAA"
+gc_content=[0.129,0.287,0.423,0.476,0.641,0.742,0.783]
+a = random_genome(dna,gc_content)
+print(a)
+
+
