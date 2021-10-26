@@ -131,4 +131,29 @@ gc_content=[0.129,0.287,0.423,0.476,0.641,0.742,0.783]
 a = random_genome(dna,gc_content)
 print(a)
 
+def fact(n):
+    if n==1 or n==0:
+        return 1
+    return n*fact(n-1)
+
+
+def perfect_match(rna):
+    d= {'A':0,'C':0,'G':0,'U':0}
+    for i in rna:
+        d[i]+=1
+    if d['A']==d['U'] and d['C']==d['G']:
+        return fact(d['A'])*fact(d['C'])
+    else:
+        return "Perfect Match doesn't exist"
+
+def main():
+    rna = input("Enter RNA String : \n")
+    total_match = perfect_match(rna)
+    if type(total_match)==int:
+        print("Total Number of perfect matching : ",total_match)
+    else:
+        print(total_match)
+if __name__=="__main__":
+    main()
+
 
