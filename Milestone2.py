@@ -46,6 +46,20 @@ def shared_motif(dna_list):
                         answer = string
     return answer
 
+def get_edges(dict):
+        key_list = dict.keys()
+        list = []
+        for i in key_list:
+            list.append(i)
+        list2 = []
+        for i in range(0,len(list)):
+            for j in range(i+1,len(list)):
+
+                if(dict[list[i]][-3:] == dict[list[j]][:3] or dict[list[i]][:3] == dict[list[j]][-3:]):
+                    list2.append((list[i],list[j]))          
+        return list2
+    
+
 print(shared_motif(["GATTACA", "TAGACCA", "ATACA"]))
 if shared_motif(["GATTACA", "TAGACCA", "ATACA"]) == "TA":
     print('True')
