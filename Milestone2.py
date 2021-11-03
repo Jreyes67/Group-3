@@ -2,31 +2,19 @@ def find_splice(dna_motif, dna):
     test_value = 0
     pos_list = []
     for i in range(0,len(dna)):
-        if dna[i] == dna_motif[0]:
-            pos_list.append(i)
-            test_value = i
-            break
-    for i in range(0,len(dna)):
-        if dna[i] == dna_motif[1]:
-            if i > test_value:
+            if dna[i] == dna_motif[0]:
                 pos_list.append(i)
                 test_value = i
                 break
-    for i in range(0,len(dna)):
-        if dna[i] == dna_motif[2]:
-            if i > test_value:
-                pos_list.append(i)
-                test_value = i
-                break
-                
+    for x in range(1,len(dna_motif)):
+        for i in range(0,len(dna)):
+            if dna[i] == dna_motif[x]:
+                if i > test_value:
+                    pos_list.append(i)
+                    test_value = i
+                    break       
     return pos_list
-print(find_splice("GTA","ACGACATCACGTGACG"))
-if find_splice("GTA","ACGACATCACGTGACG") == [2, 6, 8]:
-    print('True')
-else:
-    print('False')
     
-
 def shared_motif(dna_list):   
     counter = 0  
     answer = ''         
