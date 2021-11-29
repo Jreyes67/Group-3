@@ -17,9 +17,12 @@ CCCCACCGCGACACAGTCAGT,
 AGTAGACGCACTCGCCGTCCCGATG]
 
 def assemble_genome2(dna_list):
-    first_string = dna_list[i]
-    ending8 = first_string[-8:]
-    second_string = dna_list[i+1]
-    starting8 = second_string[0:8]
-    if ending8 == starting8:
-        second_string = second_string[9:]
+    for i in len(dna_list):
+        first_string = dna_list[i]
+        ending8 = first_string[-8:]
+        second_string = dna_list[i+1]
+        starting8 = second_string[0:8]
+        if ending8 == starting8:
+            second_string = second_string[9:]
+        mammoth = first_string + second_string
+    return mammoth
