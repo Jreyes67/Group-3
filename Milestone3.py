@@ -11,3 +11,7 @@ def assemble_genome(dna_list):
                 if d.startswith(c[z:]):
                     combine[a][b] = letters - z
                     break
+
+TCCCGATGTAGTCCCCACCG
+CCCCACCGCGACACAGTCAGT
+AGTAGACGCACTCGCCGTCCCGATG
