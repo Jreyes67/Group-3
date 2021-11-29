@@ -12,13 +12,10 @@ def assemble_genome(dna_list):
                     combine[a][b] = letters - z
                     break
 
-ms3 = ['TCCCGATGTAGTCCCCACCG',
-'CCCCACCGCGACACAGTCAGT',
-'AGTAGACGCACTCGCCGTCCCGATG']
 
 def assemble_genome2(dna_list):
   mammoth = dna_list[0]
-  while len(mammoth) < 50:
+  while len(mammoth) < 16770:
     for i in range(0,len(dna_list)):
       string = dna_list[i]
       if string[0:8] == mammoth[-8:]:
@@ -33,5 +30,10 @@ def assemble_genome2(dna_list):
     print(len(mammoth))
   return mammoth
     
-print(assemble_genome2(ms3))
+
+f = open('ms3-dna-100.txt', 'r')
+
+print(assemble_genome2(f))
+    
+
 
