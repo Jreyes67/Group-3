@@ -15,3 +15,6 @@ def assemble_genome(dna_list):
 ms3-dna-50 = [TCCCGATGTAGTCCCCACCG,
 CCCCACCGCGACACAGTCAGT,
 AGTAGACGCACTCGCCGTCCCGATG]
+
+def assemble_genome2(dna_list):
+    
