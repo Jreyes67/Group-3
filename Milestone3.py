@@ -12,6 +12,6 @@ def assemble_genome(dna_list):
                     combine[a][b] = letters - z
                     break
 
-TCCCGATGTAGTCCCCACCG
-CCCCACCGCGACACAGTCAGT
-AGTAGACGCACTCGCCGTCCCGATG
+ms3-dna-50 = [TCCCGATGTAGTCCCCACCG,
+CCCCACCGCGACACAGTCAGT,
+AGTAGACGCACTCGCCGTCCCGATG]
