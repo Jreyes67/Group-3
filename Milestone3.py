@@ -17,4 +17,6 @@ CCCCACCGCGACACAGTCAGT,
 AGTAGACGCACTCGCCGTCCCGATG]
 
 def assemble_genome2(dna_list):
+    first_string = dna_list[i]
+    beginning8 = first_string[-1:-8]
     
