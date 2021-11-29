@@ -18,7 +18,8 @@ AGTAGACGCACTCGCCGTCCCGATG]
 
 def assemble_genome2(dna_list):
     first_string = dna_list[i]
-    ending8 = first_string[-1:-8]
+    ending8 = first_string[-8:]
     second_string = dna_list[i+1]
-    ending8 = second_string[0:7]
-    
+    starting8 = second_string[0:8]
+    if ending8 == starting8:
+        second_string = second_string[9:]
