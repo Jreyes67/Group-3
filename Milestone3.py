@@ -1,3 +1,5 @@
+f = open('ms3-dna-100.txt', 'r')
+
 def load_file(file):
     myfile = open( 'file' )
     mydata = myfile.readlines()
