@@ -2,6 +2,7 @@ def load_file(file):
     myfile = open( 'file' )
     mydata = myfile.readlines()
     myfile.close()
+    return mydata
 
 def assemble_genome2(dna_list):
   mammoth = dna_list[0]
