@@ -1,4 +1,4 @@
-f = open('ms3-dna-100.txt', 'r')
+f = open('ms3-dna-mammuthus.txt', 'r')
 
 def load_file(file):
     myfile = open( 'file' )
