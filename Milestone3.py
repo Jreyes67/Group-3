@@ -1,10 +1,9 @@
 #f = open('ms3-dna-mammuthus.txt', 'r')
 import csv
-f = open("ms3-dna-mammuthus.txt")
-file = csv.reader(data) //read
+file = ms3-dna-mammuthus.txt
 
 def load_file(file):
-    myfile = open( 'file' )
+    myfile = open( "file" )
     mydata = myfile.readlines()
     myfile.close()
     return mydata
