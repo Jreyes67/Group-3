@@ -23,7 +23,8 @@ def assemble_genome(dna_list):
                     combine[a][b] = letters - z
                     break
 
-
+print(assemble_genome(load_file(f)))
+                    
 def assemble_genome2(dna_list=load_file(f)):
   mammoth = dna_list[0]
   while len(mammoth) < 50:
