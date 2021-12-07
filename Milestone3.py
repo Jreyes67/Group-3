@@ -8,7 +8,7 @@ def load_file(file):
     myfile.close()
     return mydata
 
-def assemble_genome2(dna_list=mydata):
+def assemble_genome2(dna_list=load_file(file)):
   mammoth = dna_list[0]
   while len(mammoth) < 16770:
     for i in range(0,len(dna_list)):
