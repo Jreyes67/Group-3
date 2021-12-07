@@ -21,10 +21,7 @@ def assemble_genome2(dna_list=load_file(f)):
       if string[-8:] == mammoth[0:8]:
         mammoth = string + mammoth[8:]
         break
-    print(mammoth)
     print(len(mammoth))
   return mammoth
 
-    
-
-
+print(assemble_genome2(load_file(f)))
