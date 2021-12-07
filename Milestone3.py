@@ -17,7 +17,6 @@ def assemble_genome(dna_list=load_file(f)):
                 if d.startswith(c[z:]):
                     combine[a][b] = letters - z
                     break
-print(assemble_genome(dna_list=load_file(f))
 
 def load_file(file):
     myfile = open( file )
