@@ -3,6 +3,11 @@
 import csv
 f = "ms3-dna-mammuthus.txt"
 
+def load_file(file):
+    myfile = open( file )
+    mydata = myfile.readlines()
+    myfile.close()
+    return mydata
 
 def assemble_genome(dna_list=load_file(f)):
     length = len(dna_list)
@@ -18,11 +23,6 @@ def assemble_genome(dna_list=load_file(f)):
                     combine[a][b] = letters - z
                     break
 
-def load_file(file):
-    myfile = open( file )
-    mydata = myfile.readlines()
-    myfile.close()
-    return mydata
 
 def assemble_genome2(dna_list=load_file(f)):
   mammoth = dna_list[0]
