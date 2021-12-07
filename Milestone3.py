@@ -10,7 +10,7 @@ def load_file(file):
 
 def assemble_genome2(dna_list=load_file(f)):
   mammoth = dna_list[0]
-  while len(mammoth) < 100:
+  while len(mammoth) < 500:
     for i in range(0,len(dna_list)):
       string = dna_list[i]
       if string[0:8] == mammoth[-8:]:
