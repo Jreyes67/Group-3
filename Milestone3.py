@@ -9,7 +9,7 @@ def load_file(file):
     myfile.close()
     return mydata
 
-def assemble_genome(dna_list=load_file(f)):
+def assemble_genome(dna_list):
     length = len(dna_list)
     combine = [[0 for _ in range(length)] for _ in range(length)]
     for a in range(length):
