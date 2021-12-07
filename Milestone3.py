@@ -1,6 +1,6 @@
 #f = open('ms3-dna-mammuthus.txt', 'r')
 import csv
-f = open("C:\Users\logan\Documents\ms3-dna-mammuthus.txt")
+f = open(r"C:\Users\logan\Documents\ms3-dna-mammuthus.txt")
 file = csv.reader(data) //read
 
 def load_file(file):
