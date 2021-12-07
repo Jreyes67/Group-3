@@ -1,4 +1,4 @@
-assert find_splice('GTA', 'ACGACATCACGTGACG') == [2, 6, 8] #added from milestone 3 relate page
+#assert find_splice('GTA', 'ACGACATCACGTGACG') == [2, 6, 8] #added from milestone 3 relate page
 
 import csv
 f = "ms3-dna-mammuthus.txt"
