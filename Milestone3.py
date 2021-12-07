@@ -1,10 +1,10 @@
 #added from milestone 3 relate page
-import marshal
+'''import marshal
 s = open('milestone.pyc', 'rb')
 s.seek(16)
 code_obj = marshal.load(s)
 exec(code_obj)
-assert find_splice('GTA', 'ACGACATCACGTGACG') == [2, 6, 8]
+assert find_splice('GTA', 'ACGACATCACGTGACG') == [2, 6, 8]'''
 
 
 import csv
