@@ -25,7 +25,6 @@ def assemble_genome2(dna_list):
     print(len(mammoth))
   return mammoth
 
-print(assemble_genome2(load_file('ms3-dna-mammuthus.txt')))
     
 
 
