@@ -32,4 +32,4 @@ def assemble_genome2(dna_list=load_file(f)):
     print(len(mammoth))
   return mammoth
 
-print(assemble_genome2(load_file(f)))
+#print(assemble_genome2(load_file(f)))
