@@ -1,6 +1,6 @@
 #f = open('ms3-dna-mammuthus.txt', 'r')
 
-f = open("C:/Users/logan/Documents/ms3-dna-mammuthus.txt")
+f = open("C:\Users\logan\Documents\ms3-dna-mammuthus.txt")
 
 
 def load_file(file):
